@@ -192,7 +192,7 @@ function dpSessionStart($start_vars = 'AppUI') {
 		session_write_close();
 	}
 	if (dPgetConfig('session_handling') == 'app') {
-		ini_set('session.save_handler', 'user');
+		//ini_set('session.save_handler', 'user');
 	// PHP 5.2 workaround
     if (version_compare(phpversion(), '5.0.0', '>=')) {
         register_shutdown_function('session_write_close');

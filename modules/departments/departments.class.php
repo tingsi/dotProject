@@ -133,7 +133,7 @@ function showchilddept(&$a, $level=1) {
 //recursive function to display children departments.
 function findchilddept(&$tarr, $parent, $level=1) {
 	$level = $level+1;
-	$n = count($tarr);
+	$n = $tarr ? count($tarr) : 0;
 	for ($x=0; $x < $n; $x++) {
 		if ($tarr[$x]['dept_parent'] == $parent 
 		    && $tarr[$x]['dept_parent'] != $tarr[$x]['dept_id']) {

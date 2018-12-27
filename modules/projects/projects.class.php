@@ -298,6 +298,7 @@ class CProject extends CDpObject {
 		           ? ('(project_company IN (' . implode(',', array_keys($aCpies)) . '))')
 		           : '1 = 0');
 
+		if (is_array($extra) && array_key_exists('where', $extra))
 		$extra['where'] = (((!empty($extra['where'])) ? ($extra['where'] . ' AND ') : '')
 		                   . $buffer);
 

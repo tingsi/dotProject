@@ -322,11 +322,14 @@ function findgchild(&$tarr, $parent, $level=0) {
 	}
 }
 
-reset($projects);
+reset($projects);	
+
 //$p = &$projects[$project_id];
 foreach ($projects as $p) {
 	global $parents;
 	$parents = array();
+
+	if (!array_key_exists('tasks', $p)) continue;
 	$tnums = count($p['tasks']);
 	
 	for ($i=0; $i < $tnums; $i++) {
@@ -346,6 +349,7 @@ foreach ($projects as $p) {
 		}
 	}
 }
+
 
 $hide_task_groups = false;
 
